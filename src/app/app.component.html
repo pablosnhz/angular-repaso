@@ -327,8 +327,8 @@
 <div class="content" role="main">
 
   <input type="text" placeholder="Ingrese su nombre" [(ngModel)]="user">
-  <app-saludo [nombre]="user" (mensajeEmitter)="recibirMensajeHijo($event)"></app-saludo>
-
+  <app-saludo [cositas]="user" (mensajeEmitter)="recibirMensajeHijo($event)"></app-saludo>
+  <app-saludo (mensajeEmitter)="recibirMensajeHijo($event)"></app-saludo>
 
 </div>
 

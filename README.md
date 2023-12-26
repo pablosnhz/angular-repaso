@@ -2,26 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
 
-## Development server
+Primera Parte
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Creacion de componentes, directivas y ciclos de vida.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Hicimos uso de Input, para la llamada del componente padre al hijo y el Ouput del hijo al padre. Donde tambien utilizamos tanto ngClass como NgStyle para los estilos, ngClass para el condicionamiento de una funcion si se cumple podria modificar estilo y el NgStyle para agregar valores y asi hacer uso de ellos.
+NgModel para hacer referencia a una propiedad del componente que se va a ver reflejado en la vista, implementando los banding tanto como Property [] y Event ().
+Utilizamos las llaves de interpolacion para hacer llamados de variables para incoporar valores de diversas variables definidas.
+EventEmitter que envia un evento al padre donde podria ser de tipo emit con algun mensaje, subscribe o unsubscribe y recibir ese evento donde sea enviado, se muestra mediante un evento emiter en el html.
+Implementamos en el ts OnInit para los ciclos de vida de un componente el cual da inicio una vez iniciado el componente que seria la importacion de un input o output haciendo referencia a otro componente. onChanges para detectar cambios dentro de los componentes y el onDestroy, componentes que aparecen o desaparecen que se podria decir por una condicion booleana.

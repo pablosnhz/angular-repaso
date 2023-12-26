@@ -1,7 +1,15 @@
-<h1>Como tan muchacho, {{ nombre }}</h1>
+<h1>Como tan muchacho, {{ cositas }}</h1>
 
-<h3 id="usuario" [innerHTML]="nombre">
+<h3 [ngClass]="cositas == 'nolose' ? 'nolose' : 'saludo' " id="usuario" [innerHTML]="cositas">
 
 </h3>
+
+<h5 [ngStyle]="{color: 'blue'}">
+  Buenas, que tal
+</h5>
+
+<h5 [ngStyle]="myStyle">
+  Buenas, que tal
+</h5>
 
 <button (click)="mensajeAlPadre()">Enviar saludo</button>
