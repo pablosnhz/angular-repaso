@@ -7,11 +7,22 @@ import { Component, Input, Output, OnInit, EventEmitter, OnDestroy, OnChanges, S
 })
 export class SaludoComponent implements OnInit, OnDestroy, OnChanges {
 
-  // padre llama al hijo, veni hijo
-  @Input() cositas: string = 'Olakease';
+  // padre llama al hijo, veni hijo, para traer input
+  @Input() newText: string = 'MyNameIs';
 
-  // hijo llama al padre, ven padre
+
+  // hijo llama al padre, ven padre, para llevar output
   @Output() mensajeEmitter: EventEmitter<string> = new EventEmitter<string>();
+  @Output() aEliminar: EventEmitter<string> = new EventEmitter<string>();
+
+  estoSeElimina(): void {
+    this.aEliminar.emit(`${ this.newText } esto se elimina`)
+  }
+
+  mensajeAlPadre(): void {
+    // alert(`${ this.nombre } procedimiento exitoso!`)
+    this.mensajeEmitter.emit(`${ this.newText } procedimiento exitoso!`);
+  }
 
   myStyle: object = {
     color: 'blue',
@@ -30,9 +41,6 @@ export class SaludoComponent implements OnInit, OnDestroy, OnChanges {
     console.log('ngOnDestroy implemented.');
   }
 
-  mensajeAlPadre(): void {
-    // alert(`${ this.nombre } procedimiento exitoso!`)
-    this.mensajeEmitter.emit(`${ this.cositas } procedimiento exitoso!`);
-  }
-
 }
+
+

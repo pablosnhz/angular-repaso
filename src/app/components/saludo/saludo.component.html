@@ -1,10 +1,10 @@
-<h1>Como tan muchacho, {{ cositas }}</h1>
+<h1>Como tan muchacho, {{ newText }}</h1>
 
-<h3 [ngClass]="cositas == 'nolose' ? 'nolose' : 'saludo' " id="usuario" [innerHTML]="cositas">
+<h3 [ngClass]="newText == 'nolose' ? 'nolose' : 'saludo' " id="usuario" [innerHTML]="newText">
 
 </h3>
 
-<h5 [ngStyle]="{color: 'blue'}">
+<h5 [ngStyle]="{color: 'red'}">
   Buenas, que tal
 </h5>
 
@@ -13,3 +13,6 @@
 </h5>
 
 <button (click)="mensajeAlPadre()">Enviar saludo</button>
+<button (click)="estoSeElimina()">Eliminar</button>
+
+<app-lista-basica></app-lista-basica>

@@ -5,14 +5,20 @@ import { AppComponent } from './app.component';
 import { SaludoComponent } from './components/saludo/saludo.component';
 import { FormsModule } from '@angular/forms';
 
+// Module importado
+import { ListsModule } from './modules/lists.module';
+
 @NgModule({
   declarations: [
     AppComponent,
-    SaludoComponent
+    SaludoComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+
+    // module importado
+    ListsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
