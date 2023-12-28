@@ -26,12 +26,19 @@ export class ListaBasicaComponent implements OnInit {
       description: 'Carne de Cerdo'
     }
   ];
+
   cargando: boolean = true;
+
+  opcion: number = 0;
 
   ngOnInit(): void {
   }
 
   cambiarCargando(){
     this.cargando = !this.cargando;
+  }
+
+  escogerOpcion(opcionEscogida: number){
+    this.opcion = opcionEscogida; // el valor cambia, implica cambios en elemts renderizados
   }
 }

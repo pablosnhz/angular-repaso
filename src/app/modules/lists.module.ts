@@ -12,7 +12,7 @@ import { ListaBasicaComponent } from './lista-basica/lista-basica.component';
     CommonModule,
   ],
   exports: [
-    // exportamos clasess clasesss componentes pipes, services
+    // exportamos clases componentes pipes, services
     // a quien importe es modulo
     ListaBasicaComponent,
   ]

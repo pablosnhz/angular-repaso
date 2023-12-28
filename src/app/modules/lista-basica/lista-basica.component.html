@@ -32,3 +32,37 @@
     <p>{{ producto.description }}</p>
   </div>
 </div>
+
+<!-- NG Switch -->
+
+<div [ngSwitch]="opcion">
+  <p [id]="1" *ngSwitchCase="1">Escogiste la opcion 1</p>
+  <p [id]="2" *ngSwitchCase="2">Escogiste la opcion 2</p>
+  <p [id]="3" *ngSwitchCase="3">Escogiste la opcion 3</p>
+  <p [id]="4" *ngSwitchCase="4">Escogiste la opcion 4</p>
+  <p *ngSwitchDefault class="cerrar">Ninguna de las opciones es valida</p>
+</div>
+
+<!-- seleccion para el usuario -->
+<div>
+  <input type="radio" name="opcion" (click)="escogerOpcion(1)">
+  <input type="radio" name="opcion" (click)="escogerOpcion(2)">
+  <input type="radio" name="opcion" (click)="escogerOpcion(3)">
+  <input type="radio" name="opcion" (click)="escogerOpcion(4)">
+  <input type="radio" selected="selected" name="opcion" (click)="escogerOpcion(0)"> Ocultar
+</div>
+
+<hr>
+
+<!-- podemos concatenar directivas -->
+
+<p>Productos de mas de 10 pesos</p>
+<div *ngFor="let producto of listaElementos; let i = index; let even = even">
+  <!-- ambito donde tenemos acceso a producto -->
+  <!-- solo renderizar productos mas de > 10 pesos de precio -->
+  <div *ngIf="producto.precio>10" [ngStyle]="even?{ backgroundColor: 'tomato', padding: '10px'}:{ backgroundColor: 'red', padding: '10px'}">
+    <p>ID: {{ i + 1 }}</p>
+    <p>{{ producto.nombre }} - {{ producto.precio }} $</p>
+    <p>{{ producto.description }}</p>
+  </div>
+</div>

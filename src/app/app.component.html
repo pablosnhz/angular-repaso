@@ -326,10 +326,14 @@
 
 <div class="content" role="main">
 
-  <input type="text" placeholder="Ingrese su nombre" [(ngModel)]="user">
-  <app-saludo [newText]="user" (mensajeEmitter)="recibirMensajeHijo($event)" (aEliminar)="vaAEliminar($event)"></app-saludo>
+  <!-- <input type="text" placeholder="Ingrese su nombre" [(ngModel)]="user"> -->
+  <!-- <app-saludo [newText]="user" (mensajeEmitter)="recibirMensajeHijo($event)" (aEliminar)="vaAEliminar($event)"></app-saludo> -->
 
+  <!-- ejemplo uso de servicio -->
+  <app-lista-contactos></app-lista-contactos>
 
+  <!-- ejemplo peticion HTTP -->
+  <app-login-form></app-login-form>
 
 </div>
 
