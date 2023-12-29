@@ -7,6 +7,7 @@ export type Producto = {
   description: string
 }
 
+
 @Component({
   selector: 'app-lista-basica',
   templateUrl: './lista-basica.component.html',
@@ -27,18 +28,22 @@ export class ListaBasicaComponent implements OnInit {
     }
   ];
 
-  cargando: boolean = true;
 
-  opcion: number = 0;
-
-  ngOnInit(): void {
-  }
+   cargando: boolean = true;
 
   cambiarCargando(){
     this.cargando = !this.cargando;
   }
 
+  opcion: number = 0;
+
   escogerOpcion(opcionEscogida: number){
     this.opcion = opcionEscogida; // el valor cambia, implica cambios en elemts renderizados
+  }
+
+
+
+
+  ngOnInit(): void {
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit, EventEmitter, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-saludo',
@@ -8,21 +8,15 @@ import { Component, Input, Output, OnInit, EventEmitter, OnDestroy, OnChanges, S
 export class SaludoComponent implements OnInit, OnDestroy, OnChanges {
 
   // padre llama al hijo, veni hijo, para traer input
-  @Input() newText: string = 'MyNameIs';
-
+  @Input() aloha: string = 'Don diego'
 
   // hijo llama al padre, ven padre, para llevar output
-  @Output() mensajeEmitter: EventEmitter<string> = new EventEmitter<string>();
-  @Output() aEliminar: EventEmitter<string> = new EventEmitter<string>();
+  @Output() paraEliminar: EventEmitter<string> = new EventEmitter<string>();
 
-  estoSeElimina(): void {
-    this.aEliminar.emit(`${ this.newText } esto se elimina`)
+  aMostrar(){
+    this.paraEliminar.emit(`este usuario se va a eliminar ${ this.aloha } `)
   }
 
-  mensajeAlPadre(): void {
-    // alert(`${ this.nombre } procedimiento exitoso!`)
-    this.mensajeEmitter.emit(`${ this.newText } procedimiento exitoso!`);
-  }
 
   myStyle: object = {
     color: 'blue',

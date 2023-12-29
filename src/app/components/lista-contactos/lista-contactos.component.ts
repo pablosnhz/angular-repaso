@@ -28,7 +28,6 @@ export class ListaContactosComponent implements OnInit, OnDestroy {
       .then((lista: IContacto[]) => this.listaContactos = lista)
       .catch((error) => console.error(`Hubo un error al recuperar lista contacto: ${error}`))
       .finally(() => console.log(`Peticion de contactos terminada`));
-    console.table(this.listaContactos);
   }
 
   obtenerContacto(id: number){

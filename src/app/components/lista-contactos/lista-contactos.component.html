@@ -1,7 +1,7 @@
 <h3>Lista de contactos</h3>
 
-<div *ngFor="let contacto of listaContactos">
-  <p class="contacto" (click)="obtenerContacto(contacto.id)"> {{ contacto.nombre }} </p>
+<div *ngFor="let contactInfo of listaContactos">
+  <p class="contacto" (click)="obtenerContacto(contactInfo.id)"> {{ contactInfo.nombre }} </p>
 </div>
 
 <ng-container *ngIf="contactoSeleccionado; else noSeleccionado">

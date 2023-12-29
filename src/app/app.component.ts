@@ -10,11 +10,7 @@ export class AppComponent {
   user = '@Cipper';
   user1 = '@MyNameIsCheka';
 
-  recibirMensajeHijo(evento: string){
-    alert(evento);
-  }
-
-  vaAEliminar(evento: string){
+  mensajeDeEliminar(evento: string){
     alert(evento);
   }
 
