@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 
+export interface IUser {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+}
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -10,6 +18,20 @@ export class LoginFormComponent implements OnInit {
 
   constructor(private AuthService: AuthService){
 
+  }
+
+  listUser: any;
+  filtroNombre: string = '';
+
+
+
+  searchCharacters(): void {
+    // Llama al servicio para obtener la lista filtrada de personajes según el filtroNombre
+    this.AuthService.searchCharacters(this.filtroNombre).subscribe(
+      (data) => {
+        this.listUser = data.results;
+      }
+    );
   }
 
   ngOnInit(): void {

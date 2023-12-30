@@ -24,8 +24,21 @@ ngContainer y ngTemplate van a aparecer si se cumple una condicion, de no cumpli
 
 // TERCERA PARTE
 
-Para empezar creamos una Interface con datos de contactos, por el service solicitamos esos datos mediante una promesa de tipo contactos en este caso. mocks lista a exportar con los datos de los contactos, y la otra interface donde declaramos su tipo, en mocks declaramos una const como CONTACTO: IProducto[]; para hacer uso de la interface y el mock, lo importamos en el Service, este service nos va a dar margen para crear funciones para si luego mostrar su contenido en pantalla.
+Para empezar creamos una Interface con datos de contactos, por el service solicitamos esos datos mediante una promesa de tipo contactos en este caso. mocks lista a exportar con los datos de los contactos, y la otra interface donde declaramos su tipo, en mocks declaramos una const como CONTACTO: IProducto[]; para hacer uso de la interface y el mock, los importamos en el Service al mock y al interface, este service nos va a dar margen para crear funciones para si luego mostrar su contenido en pantalla.
 Inyectamos el servicio en el constructor de el componente ts a(si, lo llevamos a donde luego vamos a mostrar esos datos) manipular los datos que vamos a traer de esa funcion con la promesa.
 Vamos a crear dos funciones en el service, una para traer los datos con una promesa y otra para buscar una lista de los empleados por su ID que lo hicimos mediante un find.
 Implementamos el RXJS para manejar Observables, va a servir para darle circulacion de mostrar los diversos contactos con sus nombres, si no tuviera el observable, lo borro, que pasa? me aparecen en pantalla solo el nombre sin poder manipularlos para mostrar la informacion, por eso en el observable para hacer uso del next y asi poder mostrar por su id, los datos de los contactos.
-Una vez llamado al service por en constructor para traer las funciones que nos traen los datos de las interfaces, en el ngOnInit vamos a obtener la lista de los contactos
+Añadimos una observable en el service para luego subscribirnos en el component.ts que nos va a traer el id del contacto con sus datos.
+Otra cosa, el destroy suele usarse cuando usamos Rxjs.
+Una vez llamado al service por el constructor para traer las funciones que nos traen los datos de las interfaces, en el ngOnInit vamos a obtener la lista de los contactos.
+Para traer la lista de contacto, hacemos .then .catch . finally para manejar los resultados y posibles errores, bien eso, con esto obtenemos la lista de contactos y en caso de errores se muestran por un consolelog. Lo de las pruebas que hicimos en el ngOnInit que contenia el servicio con then catch y finally, era para eso justamente, hacer pruebas de que esta recibiendo bien el service.
+
+A la funcion que creamos cuando este Seleccionado, se le agrega una "const contacto" que la declaramos en el service en el observable para luego hacer uso de ella y traer de ese "contacto: IContacto", algo de su contenido, en este caso su id. Subscribe me trae los datos del contacto por su id, segun el que seleccionemos.
+Ya despues seria volcar esos datos en pantalla iterando por los contactos y con el ngContainer que nos va a mostrar su contenido segun lo seleccionado.Nombre que podria ser.
+
+La inyeccion de service va en el constructor.
+
+Ahora parte HTTP
+
+Importamos el HttpClientModule en el modulo principal, para hacer uso de la peticion http en nuestro service en el cual importamos el http para al hacer la peticion para saber si el login esta bien, hicimos llamado al http mediante el constructor y creamos una observable llamada login la cual contiene el mail de tipo mail y password tambien password, si los dos resultan ser iguales entonces eso nos da pie al otro componente, donde nos suscribimos con el observable para verificar de que los datos de login coinciden con el mail y la contraseña, de ser asi nos devuelve el token de acceso.
+Nos suscribimos para validar esos datos los cuales fueron 'pepito@gmail.com' '12345', coincide nos devuelve el response, el token! ya despues ponemos por consola los errores que pueden aparecer y/o que todo salio bien.

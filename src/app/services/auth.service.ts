@@ -19,6 +19,11 @@ export class AuthService {
     // devolvemos la respuesta del observable cuando la peticion http,
     // se complete, el componente suscrito accedera al token de http
     return this.http.post('https://reqres.in/api/login', body)
-
   }
+
+  searchCharacters(name: string): Observable<any> {
+    // Utiliza el parámetro 'name' para filtrar la búsqueda
+    return this.http.post('https://reqres.in/api/users', { page: name });
+  }
+
 }

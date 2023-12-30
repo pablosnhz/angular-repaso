@@ -28,7 +28,7 @@ export class ContactoService {
     // creamos un observable
     let observable: Observable<IContacto> = new Observable(observer => {
       observer.next(contacto); // emitir un valor a todo componente suscrito
-      observer.complete(); // no emitimos mas valores
+      observer.complete(); // no emitimos mas valores, cierra observable
     })
 
 
