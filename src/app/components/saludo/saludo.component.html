@@ -1,0 +1,62 @@
+<h1 [ngStyle]="{'text-align': 'center'}">RADIO</h1>
+
+<h2 [ngStyle]="{color: 'red', fontSize: '25px'}">En que momento del dia estamos: {{ ola }}</h2>
+<!-- <h2 [ngClass]="ola == 'nolose' ? 'nolose' : 'saludo' " [innerHTML]="ola"></h2> -->
+
+<h2 [ngStyle]="myStyle">Estas escuchando la radio en esta hora de la : {{ ola }}, generamos este medio para mantenerte con toda la informacion del dia.</h2>
+
+<br>
+<button (click)="mensajeAMostrar()">Mensaje para vos</button>
+
+<!-- PARTE DOS -->
+<button (click)="cambiarCargando()">{{ cargando ? 'Iniciar' : 'Finalizar' }}</button>
+
+<ng-container *ngIf="cargando; else elseDistn">
+<h3>Cargando datos...</h3>
+</ng-container>
+
+<ng-template #elseDistn>
+  <h3>Se ha completado con exito!</h3>
+</ng-template>
+
+
+
+<div *ngFor="let producto of listaProductos; let even = even;">
+  <p [ngStyle]="even? {backgroundColor: 'tomato', color: 'white'}: {backgroundColor: '#006400', color: 'white'}">
+     {{ producto.nombre }} - {{ producto.precio }}
+  </p>
+</div>
+
+
+<p>Seleccione la opcion que diga "azul"</p>
+
+<div [ngSwitch]="opcion">
+  <div [id]="1" *ngSwitchCase="1">azul</div>
+  <div [id]="2" *ngSwitchCase="2">rojo</div>
+  <div [id]="3" *ngSwitchCase="3">amarillo</div>
+  <div *ngSwitchDefault>No esta esa opcion</div>
+</div>
+
+<div>
+  <input type="radio" name="opcion" (click)="escogerOpcion(1)">
+  <input type="radio" name="opcion" (click)="escogerOpcion(2)">
+  <input type="radio" name="opcion" (click)="escogerOpcion(3)">
+  <input type="radio" name="opcion" selected="selected" (click)="escogerOpcion(0)"> OCULTAR
+</div>
+
+
+
+
+
+<div *ngFor="let producto of listaProductos; let even = even;">
+  <div *ngIf="producto.precio>10">
+    <p [ngStyle]="even? {backgroundColor: 'tomato', color: 'white'}: {backgroundColor: '#006400', color: 'white'}">
+      {{ producto.nombre }} - {{ producto.precio }}
+    </p>
+    <p>
+      Caracteristica: {{ producto.descripcion }}
+    </p>
+  </div>
+</div>
+
+<app-datos></app-datos>

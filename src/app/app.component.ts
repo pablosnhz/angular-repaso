@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'proyectoBootcamp';
+
+  estamos: string = 'Noche';
+
+  paraVos(evento: string){
+    alert(evento);
+  }
+
 }
