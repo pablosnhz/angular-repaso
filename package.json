@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "proyecto-bootcamp",
+=======
+  "name": "curso",
+>>>>>>> f13e8a6d3591ab9caeba7b93449787b8f9ff4945
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

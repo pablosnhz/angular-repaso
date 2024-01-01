@@ -3,7 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "proyectoBootcamp": {
+=======
+    "Curso": {
+>>>>>>> f13e8a6d3591ab9caeba7b93449787b8f9ff4945
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +21,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+<<<<<<< HEAD
             "outputPath": "dist/proyecto-bootcamp",
+=======
+            "outputPath": "dist/curso",
+>>>>>>> f13e8a6d3591ab9caeba7b93449787b8f9ff4945
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +73,17 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
+<<<<<<< HEAD
               "browserTarget": "proyectoBootcamp:build:production"
             },
             "development": {
               "browserTarget": "proyectoBootcamp:build:development"
+=======
+              "browserTarget": "Curso:build:production"
+            },
+            "development": {
+              "browserTarget": "Curso:build:development"
+>>>>>>> f13e8a6d3591ab9caeba7b93449787b8f9ff4945
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +91,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "proyectoBootcamp:build"
+=======
+            "browserTarget": "Curso:build"
+>>>>>>> f13e8a6d3591ab9caeba7b93449787b8f9ff4945
           }
         },
         "test": {
